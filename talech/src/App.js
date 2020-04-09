@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <header className = "App_header">
+                <h1>Talech Task</h1>
+            </header>
+            <div>
+                <Product_Fields />
+            </div>
+        </div>
+    );
 }
 
 export default App;
+
+class Product_Fields extends React.Component {
+    render() {
+        return (
+            <div>
+                <table className="App_table">
+                    <tr>
+                        <th>Name</th>
+                        <th>EAN</th>
+                        <th>Type</th>
+                        <th>Wight(g)</th>
+                        <th>Color</th>
+                        <th>Active</th>
+                    </tr>
+                </table>
+            </div>
+            
+        );
+    }
+}
