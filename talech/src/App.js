@@ -33,17 +33,24 @@ class Table extends React.Component {
                         <th></th>
                     </tr>
                     <tr>
-                        <th>Sugar</th>
-                        <th>555</th>
-                        <th>Sweet</th>
-                        <th>100</th>
-                        <th>White</th>
-                        <th> <CheckBox /> </th>
-                        <th> <Button_view /> <Button_edit /> <Button_delete /></th>
+                        <Item name="Sugar" ean="555" type="Sweet" weight="100" color="white"/>
                     </tr>
                 </table>
             </div>
         );
+    }
+}
+class Item extends React.Component {
+    render() {
+        return [
+            <th>{this.props.name}</th>,
+            <th>{this.props.ean}</th>,
+            <th>{this.props.type}</th>,
+            <th>{this.props.weight}</th>,
+            <th>{this.props.color}</th>,
+            <th> <CheckBox /> </th>,
+            <th> <Button_view /> <Button_edit /> <Button_delete /></th>
+        ]
     }
 }
 class Button_view extends React.Component {
