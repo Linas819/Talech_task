@@ -1,12 +1,14 @@
 .App {
-    text-align: left;
-    background-size: cover;
-}
-.App_header {
     text-align: center;
+    background-size: cover;
+    align-content: center;
 }
 .App_table {
-    width: 100%;
+    width: 800px;
+    border-collapse:collapse;
+}
+.App_table_row {
+    border-bottom: 1px solid black;
 }
 .App_button_view {
     background-color: lavender;

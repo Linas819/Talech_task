@@ -5,12 +5,12 @@ function App()
 {
     return (
         <div className="App">
-            <header className = "App_header">
+            <header>
                 <h1>Talech Task</h1>
             </header>
-            <div>
+            <body>
                 <Table />
-            </div>
+            </body>
         </div>
     );
 }
@@ -21,20 +21,20 @@ class Table extends React.Component {
     render()
     {
         return (
-            <div>
+            <center>
                 <table className="App_table">
                     <tr>
-                        <th>Name</th>
-                        <th>EAN</th>
-                        <th>Type</th>
-                        <th>Weight (g)</th>
-                        <th>Color</th>
-                        <th>Active</th>
+                        <th className="App_table_row">Name</th>
+                        <th className="App_table_row">EAN</th>
+                        <th className="App_table_row">Type</th>
+                        <th className="App_table_row">Weight (g)</th>
+                        <th className="App_table_row">Color</th>
+                        <th className="App_table_row">Active</th>
                         <th></th>
                     </tr>
                     <Item name="Sugar" ean="555" type="Sweet" weight="100" color="white"/>
                 </table>
-            </div>
+            </center>
         );
     }
 }
@@ -42,13 +42,13 @@ class Item extends React.Component {
     render() {
         return (
             <tr>
-                <th>{this.props.name}</th>
-                <th>{this.props.ean}</th>
-                <th>{this.props.type}</th>
-                <th>{this.props.weight}</th>
-                <th>{this.props.color}</th>
-                <th> <CheckBox /> </th>
-                <th> <Button_view /> <Button_edit /> <Button_delete /></th>
+                <th className="App_table_row">{this.props.name}</th>
+                <th className="App_table_row">{this.props.ean}</th>
+                <th className="App_table_row">{this.props.type}</th>
+                <th className="App_table_row">{this.props.weight}</th>
+                <th className="App_table_row">{this.props.color}</th>
+                <th className="App_table_row"> <CheckBox /> </th>
+                <th className="App_table_row"> <Button_view /> <Button_edit /> <Button_delete /></th>
             </tr>
         );
     }
@@ -75,6 +75,6 @@ class CheckBox extends React.Component
 {
     render() 
     {
-        return (<input name="Active" type="checkbox" />);
+        return (<input name="Active" type="checkbox" checked />);
     }
 }
