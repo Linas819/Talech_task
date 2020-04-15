@@ -1,11 +1,49 @@
 .App {
-  text-align: left;
-  background-size:cover;
+    text-align: left;
+    background-size: cover;
 }
 .App_header {
     text-align: center;
 }
 .App_table {
-    width:100%;
+    width: 100%;
 }
-
+.App_button_view {
+    background-color: lavender;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Calibri;
+    height: 36px;
+    width: 54px;
+    box-shadow: 1px 1px #888888;
+    border-radius: 3px;
+}
+.App_button_edit {
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Calibri;
+    height: 36px;
+    width: 54px;
+    box-shadow: 1px 1px #888888;
+    border-radius: 3px;
+}
+.App_button_delete {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Calibri;
+    height: 36px;
+    width: 72px;
+    box-shadow: 1px 1px #888888;
+    border-radius: 3px;
+}

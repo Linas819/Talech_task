@@ -32,9 +32,7 @@ class Table extends React.Component {
                         <th>Active</th>
                         <th></th>
                     </tr>
-                    <tr>
-                        <Item name="Sugar" ean="555" type="Sweet" weight="100" color="white"/>
-                    </tr>
+                    <Item name="Sugar" ean="555" type="Sweet" weight="100" color="white"/>
                 </table>
             </div>
         );
@@ -42,38 +40,34 @@ class Table extends React.Component {
 }
 class Item extends React.Component {
     render() {
-        return [
-            <th>{this.props.name}</th>,
-            <th>{this.props.ean}</th>,
-            <th>{this.props.type}</th>,
-            <th>{this.props.weight}</th>,
-            <th>{this.props.color}</th>,
-            <th> <CheckBox /> </th>,
-            <th> <Button_view /> <Button_edit /> <Button_delete /></th>
-        ]
+        return (
+            <tr>
+                <th>{this.props.name}</th>
+                <th>{this.props.ean}</th>
+                <th>{this.props.type}</th>
+                <th>{this.props.weight}</th>
+                <th>{this.props.color}</th>
+                <th> <CheckBox /> </th>
+                <th> <Button_view /> <Button_edit /> <Button_delete /></th>
+            </tr>
+        );
     }
 }
 class Button_view extends React.Component {
     render() {
-        return (
-            <input type="button" value="VIEW" />
-        );
+        return (<input type="button" value="VIEW" className="App_button_view"/>);
     }
 }
 class Button_edit extends React.Component {
     render() {
-        return (
-            <input type="button" value="EDIT" />
-        );
+        return (<input type="button" value="EDIT" className="App_button_edit" />);
     }
 }
 class Button_delete extends React.Component
 {
     render()
     {
-        return (
-            <input type="button" value="DELETE"/> 
-        );
+        return (<input type="button" value="DELETE" className="App_button_delete" />);
     }
 }
 
@@ -81,8 +75,6 @@ class CheckBox extends React.Component
 {
     render() 
     {
-        return (
-            <input name="Active" type="checkbox" />
-        );
+        return (<input name="Active" type="checkbox" />);
     }
 }
