@@ -7,7 +7,7 @@
     width: 800px;
     border-collapse:collapse;
 }
-.App_table_row {
+tr {
     border-bottom: 1px solid black;
 }
 .App_button_view {

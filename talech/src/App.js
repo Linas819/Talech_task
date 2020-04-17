@@ -8,13 +8,12 @@ function App()
             <header>
                 <h1>Talech Task</h1>
             </header>
-            <body>
+            <div>
                 <Table />
-            </body>
+            </div>
         </div>
     );
 }
-
 export default App;
 
 class Table extends React.Component {
@@ -23,16 +22,18 @@ class Table extends React.Component {
         return (
             <center>
                 <table className="App_table">
-                    <tr>
-                        <th className="App_table_row">Name</th>
-                        <th className="App_table_row">EAN</th>
-                        <th className="App_table_row">Type</th>
-                        <th className="App_table_row">Weight (g)</th>
-                        <th className="App_table_row">Color</th>
-                        <th className="App_table_row">Active</th>
-                        <th></th>
-                    </tr>
-                    <Item name="Sugar" ean="555" type="Sweet" weight="100" color="white"/>
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <th>EAN</th>
+                            <th>Type</th>
+                            <th>Weight (g)</th>
+                            <th>Color</th>
+                            <th>Active</th>
+                            <th></th>
+                        </tr>
+                        <Item name="Sugar" ean="555" type="Sweet" weight="100" color="white" />
+                    </tbody>
                 </table>
             </center>
         );
@@ -40,15 +41,14 @@ class Table extends React.Component {
 }
 class Item extends React.Component {
     render() {
+        const properties = [this.props.name, this.props.ean, this.props.type, this.props.weight, this.props.color]
         return (
             <tr>
-                <th className="App_table_row">{this.props.name}</th>
-                <th className="App_table_row">{this.props.ean}</th>
-                <th className="App_table_row">{this.props.type}</th>
-                <th className="App_table_row">{this.props.weight}</th>
-                <th className="App_table_row">{this.props.color}</th>
-                <th className="App_table_row"> <CheckBox /> </th>
-                <th className="App_table_row"> <Button_view /> <Button_edit /> <Button_delete /></th>
+                {
+                    properties.map(properties => <th>{properties}</th>)
+                }
+                <th> <CheckBox /> </th>
+                <th><Button_view /><Button_edit /><Button_delete /></th>
             </tr>
         );
     }
@@ -75,6 +75,6 @@ class CheckBox extends React.Component
 {
     render() 
     {
-        return (<input name="Active" type="checkbox" checked />);
+        return (<input name="Active" type="checkbox" checked/>);
     }
 }
