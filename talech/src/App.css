@@ -8,7 +8,10 @@
     border-collapse:collapse;
 }
 tr {
-    border-bottom: 1px solid black;
+    border: 1px;
+    border-style: solid;
+    border-color: darkgray;
+    height: 62.5px;
 }
 .App_button_view {
     background-color: lavender;
