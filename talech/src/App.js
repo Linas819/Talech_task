@@ -12,7 +12,7 @@ function App()
                 <Table />
             </div>
         </div>
-    );
+            );
 }
 export default App;
 
@@ -32,12 +32,19 @@ class Table extends React.Component {
                             <th>Active</th>
                             <th></th>
                         </tr>
-                        <Item name="Sugar" ean="555" type="Sweet" weight="100" color="white" />
+                        {GetData()}
                     </tbody>
                 </table>
             </center>
         );
     }
+}
+function GetData() {
+    var word = "Sugar 555 Sweet 100 White";
+    var sentance = word.split(" ");
+    return (
+        <Item name={sentance[0]} ean={sentance[1]} type={sentance[2]} weight={sentance[3]} color={sentance[4]} />
+    );
 }
 class Item extends React.Component {
     render() {
