@@ -24,7 +24,7 @@ tr {
     font-weight: bold;
     font-family: Calibri;
     height: 36px;
-    width: 54px;
+    width: 60px;
 }
 .App_button_edit {
     background-color: blue;
@@ -37,7 +37,7 @@ tr {
     font-weight: bold;
     font-family: Calibri;
     height: 36px;
-    width: 54px;
+    width: 60px;
 }
 .App_button_delete {
     background-color: red;
@@ -50,5 +50,5 @@ tr {
     font-weight: bold;
     font-family: Calibri;
     height: 36px;
-    width: 72;
+    width: 80px;
 }
