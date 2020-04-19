@@ -40,7 +40,7 @@ class Table extends React.Component {
     }
 }
 function GetData() {
-    var word = "Sugar 555 Sweet 100 White";
+    var word = localStorage.getItem('Item');
     var sentance = word.split(" ");
     return (
         <Item data={sentance} />
@@ -82,6 +82,6 @@ class CheckBox extends React.Component
 {
     render() 
     {
-        return (<input name="Active" type="checkbox" checked/>);
+        return (<input name="Active" type="checkbox"/>);
     }
 }
