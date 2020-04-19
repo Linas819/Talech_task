@@ -43,12 +43,12 @@ function GetData() {
     var word = "Sugar 555 Sweet 100 White";
     var sentance = word.split(" ");
     return (
-        <Item name={sentance[0]} ean={sentance[1]} type={sentance[2]} weight={sentance[3]} color={sentance[4]} />
+        <Item data={sentance} />
     );
 }
 class Item extends React.Component {
     render() {
-        const properties = [this.props.name, this.props.ean, this.props.type, this.props.weight, this.props.color]
+        const properties = this.props.data;
         return (
             <tr>
                 {
