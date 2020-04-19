@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { object } from 'prop-types';
 
 function App()
 {
@@ -27,7 +28,7 @@ class Table extends React.Component {
                             <th>Name</th>
                             <th>EAN</th>
                             <th>Type</th>
-                            <th>Weight (g)</th>
+                            <th>Weight (g/l)</th>
                             <th>Color</th>
                             <th>Active</th>
                             <th></th>
@@ -40,15 +41,20 @@ class Table extends React.Component {
     }
 }
 function GetData() {
-    var word = localStorage.getItem('Item');
-    var sentance = word.split(" ");
-    return (
-        <Item data={sentance} />
-    );
+    var result_Items = [],
+        keys = Object.keys(localStorage),
+        i = keys.length;
+    while (i--)
+        result_Items.push(localStorage.getItem(keys[i]));
+    console.log(result_Items);
+    return [
+        result_Items.map(result_Items => <Item data={result_Items} />)
+    ];
 }
 class Item extends React.Component {
     render() {
-        const properties = this.props.data;
+        var word = this.props.data;
+        var properties = word.split(" ");
         return (
             <tr>
                 {
