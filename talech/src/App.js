@@ -9,11 +9,9 @@ function App()
             <header>
                 <h1>Talech Task</h1>
             </header>
-            <div>
-                <Table />
-            </div>
+            <Table />
         </div>
-            );
+    );
 }
 export default App;
 
@@ -46,22 +44,21 @@ function GetData() {
         i = keys.length;
     while (i--)
         result_Items.push(localStorage.getItem(keys[i]));
-    console.log(result_Items);
-    return [
+    return (
         result_Items.map(result_Items => <Item data={result_Items} />)
-    ];
+    );
 }
 class Item extends React.Component {
     render() {
         var word = this.props.data;
         var properties = word.split(" ");
         return (
-            <tr>
+            <tr id={properties[1]}>
                 {
                     properties.map(properties => <th>{properties}</th>)
                 }
                 <th> <CheckBox /> </th>
-                <th><Button_view /><Button_edit /><Button_delete /></th>
+                <th><Button_view /><Button_edit /><Button_delete id={properties[1]}/></th>
             </tr>
         );
     }
@@ -80,14 +77,19 @@ class Button_delete extends React.Component
 {
     render()
     {
-        return (<input type="button" value="DELETE" className="App_button_delete" />);
+        const id = this.props.id;
+
+        return (<input type="button" value="DELETE" className="App_button_delete" onClick={() => Delete(id)} />);
     }
 }
-
+function Delete(id) {
+    var row = document.getElementById(id);
+    row.parentNode.removeChild(row);
+}
 class CheckBox extends React.Component 
 {
     render() 
     {
-        return (<input name="Active" type="checkbox"/>);
+        return (<input name="Active" type="checkbox" checked />);
     }
 }
