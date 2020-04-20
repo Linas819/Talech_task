@@ -85,6 +85,8 @@ class Button_delete extends React.Component
 function Delete(id) {
     var row = document.getElementById(id);
     row.parentNode.removeChild(row);
+    localStorage.removeItem(id);
+
 }
 class CheckBox extends React.Component 
 {
